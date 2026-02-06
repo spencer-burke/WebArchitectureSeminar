@@ -14,7 +14,7 @@
 
         @livewireStyles
     </head>
-    <body data-theme="light">
+    <body>
         {{ $slot }}
 
         @livewireScripts
