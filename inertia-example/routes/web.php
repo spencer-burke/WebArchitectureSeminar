@@ -1,12 +1,21 @@
 <?php
 
+use App\Models\Item;
+use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Route;
 use Inertia\Inertia;
 
 Route::get('/', function () {
-    return view('welcome');
+    return Inertia::render('Landing', [
+        'items' => Item::all()
+    ]);
 });
 
-Route::get('/landing', function () {
-    return Inertia::render('Landing');
+Route::post('/', function (Request $request) {
+    Item::create([
+        'name' => $request->name,
+        'description' => $request->description,
+    ]);
+
+    return redirect()->back();
 });
