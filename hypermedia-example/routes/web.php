@@ -3,9 +3,9 @@
 use Illuminate\Support\Facades\Route;
 
 Route::get('/', function () {
-    return view('landing');
+    return view('Landing');
 });
 
 Route::get('/items', function () {
-    return view('_items');
+    return view('_Items');
 })->name('items');
